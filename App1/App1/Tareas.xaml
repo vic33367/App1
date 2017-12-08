@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Tareas">
+    
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Entry x:Name="txtnombre" Placeholder="Nombre" AbsoluteLayout.LayoutBounds=".5,.1,.9,.07" AbsoluteLayout.LayoutFlags="All"  />
+            <Entry x:Name="txtdescripcion" Placeholder="Descripcion" AbsoluteLayout.LayoutBounds=".5,.2,.9,.07" AbsoluteLayout.LayoutFlags="All"  />
+            <Picker x:Name="pkrArea"  SelectedIndexChanged="pkrArea_SelectedIndexChanged" Title="Areas"  AbsoluteLayout.LayoutBounds=".5,.3,.9,.1" AbsoluteLayout.LayoutFlags="All"  />
+            <Button x:Name="btnreg" Text="Registrar" Clicked="btnreg_Clicked"   AbsoluteLayout.LayoutBounds=".5,.4,.7,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
+            <Button x:Name="btnact" Text="Actualizar" Clicked="btnact_Clicked"   AbsoluteLayout.LayoutBounds=".5,.5,.7,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Orange" TextColor="WhiteSmoke" />
+            <Button x:Name="btndel" Text="Borrar" Clicked="btndel_Clicked"   AbsoluteLayout.LayoutBounds=".5,.6,.7,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Red" TextColor="WhiteSmoke" />
+
+
+            <ListView ItemsSource="{Binding Items2}" ItemSelected="ListView_ItemSelected" CachingStrategy="RecycleElement" AbsoluteLayout.LayoutBounds=".5,1,.9,.25" AbsoluteLayout.LayoutFlags="All"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                   
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="60"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Entry Text="{Binding Id}" FontSize="Micro" Grid.Column="0" Grid.Row="0"/>
+                                <Entry Text="{Binding Tarea}" FontSize="Micro" Grid.Column="1" Grid.Row="0"/>
+                                <Entry Text="{Binding Descripcion}" FontSize="Micro" Grid.Column="2" Grid.Row="0"/>
+                                <Entry Text="{Binding Area}" FontSize="Micro" Grid.Column="3" Grid.Row="0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView >
+        </AbsoluteLayout>
+    </ContentPage.Content> 
+    
+</ContentPage>
