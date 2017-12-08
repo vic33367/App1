@@ -18,5 +18,15 @@ namespace App1
         {
             await Navigation.PushModalAsync(new Tareas());
         }
+
+        private async void btnUser_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Usuarios());
+        }
+
+        private void btncons_Clicked(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

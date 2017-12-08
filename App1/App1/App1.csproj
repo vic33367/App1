@@ -59,6 +59,9 @@
     <Compile Include="tblareas.cs" />
     <Compile Include="tblTareas.cs" />
     <Compile Include="tblUsuarios.cs" />
+    <Compile Include="Usuarios.xaml.cs">
+      <DependentUpon>Usuarios.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -144,6 +147,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Tareas.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Usuarios.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
