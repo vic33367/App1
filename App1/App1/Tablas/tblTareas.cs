@@ -39,12 +39,7 @@ namespace App1
             get { return descripcion; }
             set { descripcion = value; }
         }
-        [JsonProperty(PropertyName = "area")]
-        public string Area
-        {
-            get { return area; }
-            set { area = value; }
-        }
+      
         [Version]
         public string Version { get; set; }
 

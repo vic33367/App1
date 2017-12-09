@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.asignarProyecto">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Entry x:Name="txtid" Text="{Binding Id}" Placeholder="Id:" AbsoluteLayout.LayoutBounds=".5,.1,.9,.065" AbsoluteLayout.LayoutFlags="All"  />
+            <Picker x:Name="pkrTarea"   Title="Tareas" SelectedIndexChanged="pkrTarea_SelectedIndexChanged"  AbsoluteLayout.LayoutBounds=".5,.2,.9,.09" AbsoluteLayout.LayoutFlags="All"  />
+            <Picker x:Name="pkrPrioridad" SelectedIndexChanged="pkrPrioridad_SelectedIndexChanged"   Title="Prioridad"   AbsoluteLayout.LayoutBounds=".5,.3,.9,.09" AbsoluteLayout.LayoutFlags="All">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Alta</x:String>
+                        <x:String>Media</x:String>
+                        <x:String>Baja</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="Fecha Limite" Clicked="Button_Clicked" x:Name="btnFecha" AbsoluteLayout.LayoutBounds=".95,.4,.4,.065" AbsoluteLayout.LayoutFlags="All"  />
+            <Entry x:Name="txtFecha" Placeholder="Fecha:" AbsoluteLayout.LayoutBounds=".1,.4,.5,.065" AbsoluteLayout.LayoutFlags="All"  />
+            <Picker x:Name="pkrDependenciaUser" SelectedIndexChanged="pkrDependenciaUser_SelectedIndexChanged" Title="Dependencia"  AbsoluteLayout.LayoutBounds=".5,.6,.9,.09" AbsoluteLayout.LayoutFlags="All"/>
+            <Button x:Name="btnLogin" Text="Asignar" Clicked="btnLogin_Clicked"  AbsoluteLayout.LayoutBounds=".5,.8,.8,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+
+</ContentPage>

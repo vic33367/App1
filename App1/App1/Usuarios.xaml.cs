@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,6 +14,7 @@ namespace App1
         private static IMobileServiceTable<tblUsuarios> tabla;
         public static MobileServiceClient cliente;
         public ObservableCollection<tblUsuarios> Items { get; set; }
+        string tipo;
 
         public Usuarios()
         {
@@ -34,7 +32,7 @@ namespace App1
         }
         private async void btnreg_ClickedAsync(object sender, EventArgs e)
         {
-            if (txtuser.Text == null || txtnombre.Text == null || txtape_pat.Text == null || txtape_mat.Text == null || txttipo.Text == null || txtcorreo.Text == null)
+            if (txtuser.Text == null || txtnombre.Text == null || txtape_pat.Text == null || txtape_mat.Text == null  )
             {
                 await DisplayAlert("Error", "Debe llenar todos los campos", "Ok");
             }
@@ -48,7 +46,7 @@ namespace App1
                     Nombre = txtnombre.Text,
                     Paterno = txtape_pat.Text,
                     Materno = txtape_mat.Text,
-                    Tipo = txttipo.Text,
+                    Tipo = tipo,
                     Correo = txtcorreo.Text,
                     Contraseña = result
                 };
@@ -62,6 +60,17 @@ namespace App1
                 {
                     await DisplayAlert("error", "" + error, "Ok");
                 }
+            }
+        }
+
+        private void pkrTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            int selectedIndex = picker.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                tipo = (string)picker.ItemsSource[selectedIndex];
             }
         }
     }

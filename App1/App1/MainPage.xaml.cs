@@ -52,16 +52,6 @@ namespace App1
                         {
                             await Navigation.PushModalAsync(new Administrador());
                         }
-                        else if (tipo == "Maestro")
-                        {
-                            await Navigation.PushModalAsync(new Maestro());
-                        }
-                        else if (tipo == "Alumno")
-                        {
-                            await Navigation.PushModalAsync(new Alumno());
-                        }
-
-
                     }
                     else
                     {

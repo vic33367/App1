@@ -11,47 +11,30 @@ namespace App1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tareas : ContentPage
     {
-        public ObservableCollection<tblareas> Items { get; set; }
-        public ObservableCollection<tblTareas> Items2 { get; set; }
+        public ObservableCollection<tblTareas> Items { get; set; }
         public static MobileServiceClient cliente;
-        public static MobileServiceClient cliente2;
-        public static IMobileServiceTable<tblareas> Tabla;
-        public static IMobileServiceTable<tblTareas> Tabla2;
+        public static IMobileServiceTable<tblTareas> Tabla;
         string area;
         public Tareas()
         {
             InitializeComponent();
             cliente = new MobileServiceClient(AzureConnection.AzureURL);
-            cliente2 = new MobileServiceClient(AzureConnection.AzureURL);
-            Tabla = cliente.GetTable<tblareas>();
-            Tabla2 = cliente2.GetTable<tblTareas>();
-            leerAreas();
+            Tabla = cliente.GetTable<tblTareas>();            
             leerTareas();
 
 
         }
-        private async void leerAreas()
-        {
-            IEnumerable<tblareas> elementos = await Tabla.ToEnumerableAsync();
-            Items = new ObservableCollection<tblareas>(elementos);
-            int cont = Items.Count;
-            var monkeyList = new List<string>();
-            for (int i=0;i<cont;i++)
-            {
-                monkeyList.Add(Items[i].Area);
-            }            
-            pkrArea.ItemsSource = monkeyList;
-        }
+        
         private async void leerTareas()
         {
-            IEnumerable<tblTareas> elementos = await Tabla2.ToEnumerableAsync();
-            Items2 = new ObservableCollection<tblTareas>(elementos);
+            IEnumerable<tblTareas> elementos = await Tabla.ToEnumerableAsync();
+            Items = new ObservableCollection<tblTareas>(elementos);
             BindingContext = this;
         }
         private async void LeerTareasEliminadas()
         {
-            IEnumerable<tblTareas> elementos = await Tabla2.Where(todoItem => todoItem.Delete == true).ToEnumerableAsync();
-            Items2 = new ObservableCollection<tblTareas>(elementos);
+            IEnumerable<tblTareas> elementos = await Tabla.Where(todoItem => todoItem.Delete == true).ToEnumerableAsync();
+            Items = new ObservableCollection<tblTareas>(elementos);
             BindingContext = this;
             InitializeComponent();
         }
@@ -66,13 +49,13 @@ namespace App1
                 var data = new tblTareas
                 {
                     Tarea = txtnombre.Text,
-                    Descripcion = txtdescripcion.Text,
-                    Area = area
+                    Descripcion = txtdescripcion.Text
+                    
                 };
 
                 try
                 {
-                    await Tareas.Tabla2.InsertAsync(data);
+                    await Tareas.Tabla.InsertAsync(data);
                     leerTareas();
                     await DisplayAlert("Correcto", "Actividad " + txtnombre.Text + " agregada correctamente", "Ok");
                     InitializeComponent();
@@ -114,5 +97,6 @@ namespace App1
             DisplayAlert("Item Selected", ""+dato, "Ok");
             BindingContext = dato;
         }
+
     }
 }

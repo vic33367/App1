@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.tab_1">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+           
+            <ListView ItemsSource="{Binding Items}" ItemSelected="ListView_ItemSelected" CachingStrategy="RecycleElement" AbsoluteLayout.LayoutBounds=".5,.25,.9,1" AbsoluteLayout.LayoutFlags="All"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="50"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Id}" FontSize="12" Grid.Column="0" Grid.Row="0"/>
+                                <Label Text="{Binding Nombre}" FontSize="12" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding Paterno}" FontSize="12" Grid.Column="2" Grid.Row="0"/>
+                                <Label Text="{Binding Materno}" FontSize="12" Grid.Column="3" Grid.Row="0"/>
+                                <Label Text="{Binding Correo}" FontSize="12" Grid.Column="5" Grid.Row="0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView >
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -5,21 +5,26 @@
     <ContentPage.Content>
         <AbsoluteLayout>
             <Label/>
-            <Entry x:Name="txtuser" Placeholder="User"   AbsoluteLayout.LayoutBounds=".5,.1,.9,.065" AbsoluteLayout.LayoutFlags="All" />
-            <Entry x:Name="txtnombre" Placeholder="Nombre"  AbsoluteLayout.LayoutBounds=".5,.2,.9,.065"  AbsoluteLayout.LayoutFlags="All"  />
-            <Entry x:Name="txtape_pat" Placeholder="Apellido Paterno"   AbsoluteLayout.LayoutBounds=".5,.3,.9,.065" AbsoluteLayout.LayoutFlags="All" />
-            <Entry x:Name="txtape_mat" Placeholder="Apellido Materno"   AbsoluteLayout.LayoutBounds=".5,.4,.9,.065"  AbsoluteLayout.LayoutFlags="All" />
-            <Entry x:Name="txttipo" Placeholder="Tipo"   AbsoluteLayout.LayoutBounds=".5,.5,.9,.065"  AbsoluteLayout.LayoutFlags="All"  />
+            <Entry x:Name="txtuser" Placeholder="Matricula:"   AbsoluteLayout.LayoutBounds=".5,.1,.9,.065" AbsoluteLayout.LayoutFlags="All" />
+            <Entry x:Name="txtnombre" Placeholder="Nombre:"  AbsoluteLayout.LayoutBounds=".5,.2,.9,.065"  AbsoluteLayout.LayoutFlags="All"  />
+            <Entry x:Name="txtape_pat" Placeholder="Apellido Paterno:"   AbsoluteLayout.LayoutBounds=".5,.3,.9,.065" AbsoluteLayout.LayoutFlags="All" />
+            <Entry x:Name="txtape_mat" Placeholder="Apellido Materno:"   AbsoluteLayout.LayoutBounds=".5,.4,.9,.065"  AbsoluteLayout.LayoutFlags="All" />
+            <Picker x:Name="pkrTipo"  SelectedIndexChanged="pkrTipo_SelectedIndexChanged" Title="Areas"  AbsoluteLayout.LayoutBounds=".5,.5,.9,.1" AbsoluteLayout.LayoutFlags="All">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Administrador</x:String>
+                        <x:String>Usuario</x:String>                        
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
             <Entry x:Name="txtcorreo" Placeholder="Correo"   AbsoluteLayout.LayoutBounds=".5,.6,.9,.065"  AbsoluteLayout.LayoutFlags="All"  />
             <Button x:Name="btnreg" Text="Registrar" Clicked="btnreg_ClickedAsync"  AbsoluteLayout.LayoutBounds=".5,.7,.5,.065" AbsoluteLayout.LayoutFlags="All" />
-
             <ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement" AbsoluteLayout.LayoutBounds=".5,1,.9,.25" AbsoluteLayout.LayoutFlags="All"  >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions >
                                     <RowDefinition Height="60"></RowDefinition>
@@ -28,7 +33,6 @@
                                 <Label Text="{Binding Nombre}" FontSize="Micro" Grid.Column="1" Grid.Row="0"/>
                                 <Label Text="{Binding Paterno}" FontSize="Micro" Grid.Column="2" Grid.Row="0"/>
                                 <Label Text="{Binding Materno}" FontSize="Micro" Grid.Column="3" Grid.Row="0"/>
-
                                 <Label Text="{Binding Tipo}" FontSize="Micro" Grid.Column="4" Grid.Row="0"/>
                                 <Label Text="{Binding Correo}" FontSize="Micro" Grid.Column="5" Grid.Row="0"/>
                             </Grid>

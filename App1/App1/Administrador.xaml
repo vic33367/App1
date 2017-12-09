@@ -7,9 +7,9 @@
             <Label x:Name="lbldata0" HorizontalTextAlignment="Center"  AbsoluteLayout.LayoutBounds=".5,.1,.5,.05" AbsoluteLayout.LayoutFlags="All" FontSize="Small" />
             <Label x:Name="lbldata1" HorizontalTextAlignment="Center"  AbsoluteLayout.LayoutBounds=".5,.15,.5,.05" AbsoluteLayout.LayoutFlags="All" FontSize="Small" />
             <Label x:Name="lbldata2" HorizontalTextAlignment="Center"  AbsoluteLayout.LayoutBounds=".5,.2,.7,.05" AbsoluteLayout.LayoutFlags="All" FontSize="Small"  />
-            <Button x:Name="btnAct" Text="Admin. Actividades" Clicked="btnAct_Clicked" AbsoluteLayout.LayoutBounds=".5,.25,.5,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
-            <Button x:Name="btnUser" Text="Agregar Usuarios" Clicked="btnUser_Clicked" AbsoluteLayout.LayoutBounds=".5,.35,.5,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
-            <Button x:Name="btncons" Text="Ir a Registros" Clicked="btncons_Clicked"  AbsoluteLayout.LayoutBounds=".5,.45,.5,.065" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
+            <Button x:Name="btnUser" Text="Agregar Usuarios" Clicked="btnUser_Clicked" AbsoluteLayout.LayoutBounds=".5,.25,.5,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
+            <Button x:Name="btnAct" Text="Admin. Actividades" Clicked="btnAct_Clicked" AbsoluteLayout.LayoutBounds=".5,.35,.5,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
+            <Button x:Name="btncons" Text="Asignar Actividades" Clicked="btncons_Clicked_1"  AbsoluteLayout.LayoutBounds=".5,.45,.5,.065" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
 
 
 

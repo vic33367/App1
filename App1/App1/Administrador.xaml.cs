@@ -23,10 +23,9 @@ namespace App1
         {
             await Navigation.PushModalAsync(new Usuarios());
         }
-
-        private void btncons_Clicked(object sender, System.EventArgs e)
+        private async void btncons_Clicked_1(object sender, System.EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new tab_1() );
         }
     }
 }
