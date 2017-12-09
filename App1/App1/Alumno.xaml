@@ -3,10 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Alumno">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout>
+            <Label x:Name="lbldata0" HorizontalTextAlignment="Center"  AbsoluteLayout.LayoutBounds=".5,.1,.5,.05" AbsoluteLayout.LayoutFlags="All" FontSize="Small" />
+            <Label x:Name="lbldata1" HorizontalTextAlignment="Center"  AbsoluteLayout.LayoutBounds=".5,.15,.5,.05" AbsoluteLayout.LayoutFlags="All" FontSize="Small" />
+            <Label x:Name="lbldata2" HorizontalTextAlignment="Center"  AbsoluteLayout.LayoutBounds=".5,.2,.7,.05" AbsoluteLayout.LayoutFlags="All" FontSize="Small"  />
+            <ListView ItemsSource="{Binding Items}" ItemSelected="ListView_ItemSelected" CachingStrategy="RecycleElement" AbsoluteLayout.LayoutBounds=".5,.4,.9,.4" AbsoluteLayout.LayoutFlags="All"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="60"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Id}" FontSize="Micro" Grid.Column="0" Grid.Row="0"/>
+                                <Label Text="{Binding Tarea}" FontSize="Micro" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding Pprioridad}" FontSize="Micro" Grid.Column="2" Grid.Row="0"/>
+                                <Label Text="{Binding FechaAsig}" FontSize="Micro" Grid.Column="3" Grid.Row="0"/>
+                                <Label Text="{Binding fechaTerm}" FontSize="Micro" Grid.Column="4" Grid.Row="0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView >
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

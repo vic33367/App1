@@ -18,6 +18,11 @@ namespace App1
             cliente = new MobileServiceClient(AzureConnection.AzureURL);
             Tabla = cliente.GetTable<tblUsuarios>();
         }
+        public void limpiar()
+        {
+            txtuser.Text = null;
+            txtpass.Text = null;
+        }
 
         private async void btnLogin_Clicked(object sender, EventArgs e)
         {
@@ -51,7 +56,15 @@ namespace App1
                         if (tipo == "Administrador")
                         {
                             await DisplayAlert("Bienvenido", nom +" " + ape1 + " "+ape2, "Ok");
+                            limpiar();
                             await Navigation.PushAsync(new Administrador());
+
+                        }
+                        else
+                        {
+                            await DisplayAlert("Bienvenido", nom + " " + ape1 + " " + ape2, "Ok");
+                            limpiar();
+                            await Navigation.PushAsync(new Alumno());
                         }
                     }
                     else

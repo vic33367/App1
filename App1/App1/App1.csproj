@@ -47,6 +47,9 @@
     <Compile Include="asignarProyecto.xaml.cs">
       <DependentUpon>asignarProyecto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reporte.xaml.cs">
+      <DependentUpon>Reporte.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tablas\AzureConnection.cs" />
     <Compile Include="Tablas\IAuthenticate.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -163,6 +166,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="tab_1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reporte.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
