@@ -38,7 +38,6 @@ namespace App1
             IEnumerable<tblTareas> elementos = await Tabla.ToEnumerableAsync();
             Items= new ObservableCollection<tblTareas>(elementos);
             int cont1 = Items.Count;
-            await DisplayAlert("", ""+cont1, "ok");
             var List = new List<string>();
             for (int i = 0; i < cont1; i++)
             {

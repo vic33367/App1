@@ -10,6 +10,7 @@ namespace App1
         string tarea;
         string asignado;
         string prioridad;
+        string accion;
         DateTime fechaAsig;
         DateTime fechaTerm;
         string estatus;
@@ -33,6 +34,12 @@ namespace App1
         {
             get { return prioridad; }
             set { prioridad = value; }
+        }
+        [JsonProperty(PropertyName = "accion")]
+        public string Accion
+        {
+            get { return accion; }
+            set { accion = value; }
         }
         [JsonProperty(PropertyName = "asignado")]
         public string Asignado

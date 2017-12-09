@@ -24,7 +24,7 @@ namespace App1
         }
         private async void leerAsignarTarea()
         {
-            IEnumerable<tblAsignarTareas> elementos = await Tabla.ToEnumerableAsync();
+            IEnumerable<tblAsignarTareas> elementos = await Tabla.Where(todoItem => todoItem.Estatus== "Creada").ToEnumerableAsync();
             Items = new ObservableCollection<tblAsignarTareas>(elementos);
             BindingContext = this;
         }

@@ -7,7 +7,6 @@
         <AbsoluteLayout>
             <Entry x:Name="txtnombre" Placeholder="Nombre" AbsoluteLayout.LayoutBounds=".5,.1,.9,.07" AbsoluteLayout.LayoutFlags="All"  />
             <Entry x:Name="txtdescripcion" Placeholder="Descripcion" AbsoluteLayout.LayoutBounds=".5,.2,.9,.07" AbsoluteLayout.LayoutFlags="All"  />
-            <Picker x:Name="pkrArea"  SelectedIndexChanged="pkrArea_SelectedIndexChanged" Title="Areas"  AbsoluteLayout.LayoutBounds=".5,.3,.9,.1" AbsoluteLayout.LayoutFlags="All"  />
             <Button x:Name="btnreg" Text="Registrar" Clicked="btnreg_Clicked"   AbsoluteLayout.LayoutBounds=".5,.4,.7,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="SeaGreen" TextColor="WhiteSmoke" />
             <Button x:Name="btnact" Text="Actualizar" Clicked="btnact_Clicked"   AbsoluteLayout.LayoutBounds=".5,.5,.7,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Orange" TextColor="WhiteSmoke" />
             <Button x:Name="btndel" Text="Borrar" Clicked="btndel_Clicked"   AbsoluteLayout.LayoutBounds=".5,.6,.7,.07" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Red" TextColor="WhiteSmoke" />
