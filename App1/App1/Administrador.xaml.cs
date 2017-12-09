@@ -16,16 +16,16 @@ namespace App1
 
         private async void btnAct_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new Tareas());
+            await Navigation.PushAsync(new Tareas());
         }
 
         private async void btnUser_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new Usuarios());
+            await Navigation.PushAsync(new Usuarios());
         }
         private async void btncons_Clicked_1(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new tab_1() );
+            await Navigation.PushAsync(new tab_1() );
         }
     }
 }

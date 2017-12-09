@@ -47,10 +47,11 @@ namespace App1
 
                     if (cont == 1)
                     {
-                        await DisplayAlert("Correcto", "Bienvenido " + nom + " " + ape1 + " " + ape2, "Ok");
+                        
                         if (tipo == "Administrador")
                         {
-                            await Navigation.PushModalAsync(new Administrador());
+                            await DisplayAlert("Bienvenido", nom +" " + ape1 + " "+ape2, "Ok");
+                            await Navigation.PushAsync(new Administrador());
                         }
                     }
                     else
@@ -64,5 +65,7 @@ namespace App1
                 }
             }
         }
+
+        
     }
 }
