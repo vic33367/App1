@@ -31,7 +31,7 @@ namespace App1
         {
             if (e.SelectedItem == null)
                 return;
-            await Navigation.PushModalAsync(new asignarProyecto(e.SelectedItem as tblUsuarios));
+            await  Navigation.PushModalAsync(new asignarProyecto(e.SelectedItem as tblUsuarios));
             
         }
     }
