@@ -17,6 +17,7 @@ namespace App1
         public ObservableCollection<tblAsignarTareas> Items2 { get; set; }
         public static MobileServiceClient cliente2;
         public static IMobileServiceTable<tblAsignarTareas> Tabla2;
+        string tarea;
         public Reporte (object selectedItem)
         {
             var dato = selectedItem as tblAsignarTareas;
@@ -24,7 +25,17 @@ namespace App1
             InitializeComponent();
             cliente2 = new MobileServiceClient(AzureConnection.AzureURL);
             Tabla2 = cliente2.GetTable<tblAsignarTareas>();
+            if (tarea == "CREAR UN REPORTE DE PROYECTO")
+            {
+                btnConfirmar.IsVisible = false;
+            }
+            else
+            {
+                btnEnviar.IsVisible = false;
+            }
         }
+
+        
 
         private async void btnEnviar_Clicked(object sender, EventArgs e)
         {
